@@ -6,6 +6,12 @@ import os
 
 app = Flask(__name__)
 
+@app.route('/')
+def home():
+    return {
+        "message": "Interview Tracker API Running Successfully"
+    }
+
 # DATABASE CONFIG
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'db.sqlite')
@@ -237,6 +243,7 @@ def dashboard():
 
 with app.app_context():
     db.create_all()
+
 
 
 if __name__ == '__main__':
