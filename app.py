@@ -9,7 +9,8 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     return {
-        "message": "Interview Tracker API Running Successfully"
+        "project": "Interview Tracker API",
+        "status": "Running"
     }
 
 # DATABASE CONFIG
